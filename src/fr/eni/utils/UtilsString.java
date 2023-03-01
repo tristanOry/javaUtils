@@ -12,7 +12,7 @@ public class UtilsString {
 	/**
 	 * 
 	 * @param data byte[]
-	 * @return the conversion of data into an hax string (like hashes)
+	 * @return the conversion of data into an hex string (like hashes)
 	 */
 	public static String byteArrToHexStr(byte[] data) {
 		StringBuilder sb = new StringBuilder();
@@ -26,7 +26,7 @@ public class UtilsString {
 	 * 
 	 * @param str
 	 * @param n
-	 * @return a List of Strings who are sized to n chars, exceptte the last who can be smaller
+	 * @return a List of Strings who are sized to n chars, except the last who can be smaller
 	 *  
 	 */
 	public static List<String> stripStrBySize(String str, int n){
@@ -45,10 +45,12 @@ public class UtilsString {
 	 */	
 	public static byte[] hexStrToByteArr(String str) {
 		List<Byte> result = new ArrayList<>();
-		for (String d: stripStrBySize(str, 2)) {
-			result.add((byte) Integer.parseInt(d, 16));
-		}
+		
 		byte[] bResult = new byte[result.size()];
+		 stripStrBySize(str, 2).forEach(d -> {
+			result.add((byte) Integer.parseInt(d, 16));
+		});
+
 		int i = 0;
 		for (byte r: result) {
 			bResult[i] =  r;

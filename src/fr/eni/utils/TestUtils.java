@@ -14,6 +14,9 @@ public class TestUtils {
 			md = MessageDigest.getInstance("SHA-1");
 			byte[] hash = md.digest(MdP.getBytes());
 			String hash2str = UtilsString.byteArrToHexStr(hash);
+			
+			
+			
 			byte[] hash2 = UtilsString.hexStrToByteArr(hash2str);
 			System.out.println(hash2str);
 			if (hash != null && hash2 != null) {				
