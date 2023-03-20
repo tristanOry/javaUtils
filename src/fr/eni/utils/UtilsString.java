@@ -59,6 +59,11 @@ public class UtilsString {
 		return bResult;
 	}
 	
+	/**
+	 * 
+	 * @param str
+	 * @return the ascii string representing hexa characters 
+	 */
 	public static String hexStrToStr(String str) {
 		StringBuffer sb = new StringBuffer();
 		stripStrBySize(str, 2).forEach(s -> {
