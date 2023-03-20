@@ -58,4 +58,13 @@ public class UtilsString {
 		}
 		return bResult;
 	}
+	
+	public static String hexStrToStr(String str) {
+		StringBuffer sb = new StringBuffer();
+		stripStrBySize(str, 2).forEach(s -> {
+			sb.append((char) Integer.parseInt(s, 16));
+		});
+		return sb.toString();
+	}
+	
 }
